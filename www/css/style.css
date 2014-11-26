@@ -1,0 +1,64 @@
+/** 清除button样式 **/
+.button-no{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.vc-align{
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.splash{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url("../img/artwork-bkg.jpg");
+    background-size: cover;
+}
+
+.splash .start{
+    color: #fefefe;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: relative;
+    height: 100%;
+}
+
+.splash .start .login-link {
+    color: #f0b840;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 25px 15px 25px 25px;
+}
+
+
+/** 注册 **/
+.splash .start .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.splash .start .bottom .action-btn {
+    width: 100%;
+    padding: 25px 0;
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+.splash .start .bottom .action-btn.signin {
+    background-color: rgba(46, 147, 200, 0.8); }
+
+.splash .start .bottom .action-btn.signin.active {
+    background-color: #2e93c8;
+}
