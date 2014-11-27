@@ -4,7 +4,6 @@
     padding: 0 !important;
 }
 
-
 .vc-align{
     -webkit-transform : translate(-50%,-50%);
     transform : translate(-50%,-50%);
@@ -13,6 +12,17 @@
     left: 50%;
 }
 
+.buton-loading{
+    float: left;
+    margin-top: 13px;
+}
+
+.submission-opacity{
+    opacity: 0.6;
+}
+
+
+/** 过场 **/
 .splash{
     position: absolute;
     left: 0;

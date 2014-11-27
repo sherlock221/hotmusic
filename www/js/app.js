@@ -32,6 +32,9 @@ angular.module('hotmusic', ['ionic'])
                     "auth-view" : {
                         templateUrl: 'tpls/auth/login.html'
                     }
+                },
+                data : {
+                    title : "登录"
                 }
             })
             .state('auth.register', {
@@ -40,6 +43,9 @@ angular.module('hotmusic', ['ionic'])
                     "auth-view" : {
                         templateUrl: 'tpls/auth/register.html'
                     }
+                },
+                data : {
+                    title: "注册"
                 }
 
             })
@@ -47,4 +53,8 @@ angular.module('hotmusic', ['ionic'])
         //默认路径
         $urlRouterProvider.otherwise('/splash');
 
-    });
+    })
+
+    .constant('SERVER', {
+        url: 'https://api.songhop.fm/v1'
+    })

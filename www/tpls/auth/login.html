@@ -1,5 +1,16 @@
-<ion-view>
 
-        登录
+<div class="list list-inset">
+    <form name="form" ng-submit="auth.login()"  novalidate >
+        <label class="item item-input">
+            <input type="email" placeholder="请输入您的邮箱"  ng-model="user.userEmail"  autocorrect="off"  autocapitalize="off"   required />
 
-</ion-view>
+        </label>
+        <label class="item item-input">
+            <input type="password" ng-class="{'submission-opacity':auth.submitted}"  placeholder="请输入您的密码" ng-model="user.passWord"  autocorrect="off"  autocapitalize="off" required/>
+        </label>
+        <button class="button  button-full button-assertive" type="submit" ng-disabled="form.$invalid || auth.submitted"  >
+            <i class="ion-loading-c buton-loading" ng-show="auth.submitted" ></i>
+            登录
+        </button>
+    </form>
+</div>

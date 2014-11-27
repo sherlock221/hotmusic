@@ -1,0 +1,7 @@
+1.今日知道了 angular ui 路由中的 controller 别名的用法
+                        使用别名在 dom元素中 调用controller上的方法或对象。
+                        动态改变bar中的title标题 通过路由绑定的title值
+                        {{auth.state.current.data.title}}  前提需要暴露 $status对象
+                        在constant中定义常量
+
+问题 发下 ng-model 绑定的对象 需要外层包裹对象？？？

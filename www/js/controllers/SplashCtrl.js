@@ -6,5 +6,4 @@ angular.module("hotmusic")
         $scope.goRegister = function(){
             $state.go("auth.register");
         }
-
   });
