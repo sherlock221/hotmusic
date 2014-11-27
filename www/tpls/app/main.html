@@ -1,0 +1,30 @@
+<ion-tabs class="tabs-icon-only app" delegate-handle="main-tabs">
+
+    <!-- Pets Tab -->
+    <ion-tab title="Discover" icon="icon ion-home" href="#/app/discover"
+             on-select="setCurrentTab(0)" on-deselect="broadcastTabChange(0)" ng-click="">
+
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+            <ion-nav-back-button class="button-icon icon ion-chevron-left blue-white-btn no-hover">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+
+        <ion-nav-view name="tab-discover"></ion-nav-view>
+
+    </ion-tab>
+
+
+    <!-- About Tab -->
+    <ion-tab title="Profile" icon="icon ion-person" href="#/app/profile/{{me.username}}"
+             on-select="setCurrentTab(1)" on-deselect="broadcastTabChange(1)"
+             ng-click=""  badge-style="badge-assertive">
+
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+            <ion-nav-back-button class="button-icon icon ion-chevron-left blue-white-btn no-hover">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+
+        <ion-nav-view name="tab-profile"></ion-nav-view>
+    </ion-tab>
+
+</ion-tabs>
