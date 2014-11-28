@@ -5,8 +5,9 @@ angular.module("hotmusic")
 
         //表单值
         $scope.user= {
-            userEmail : "920825209@qq.com",
-            passWord  : "daohao1914"
+            userEmail : "",
+            passWord  : "",
+            birthday  : ""
         }
 
         //登录
@@ -26,9 +27,26 @@ angular.module("hotmusic")
             });
         }
 
+
         //注册
         this.register = function(){
             _this.submitted = true;
-            alert("register");
+
+            var user = {
+                email :$scope.user.userEmail,
+                password  :   $scope.user.passWord,
+                birthday  : $scope.user.birthday
+            };
+
+            userService.register(user).then(function(data){
+                console.log(data);
+                alert("注册成功！");
+                _this.submitted = false;
+            },function(err,status){
+                alert(err.error);
+                $log.error('HTTP error - status:', status, 'Error:', err);
+                _this.submitted = false;
+            });
+
         }
   });

@@ -1,1 +1,24 @@
-<button class="button button-positive">注册</button>
+<div class="list list-inset">
+
+    <form ng-submit="auth.register()" name="registerForm" novalidate>
+
+        <label class="item item-input">
+            <input type="email" ng-model="user.userEmail"   autocorrect="off"   placeholder="请输入您的邮箱"  autocapitalize="off" required/>
+        </label>
+
+        <label class="item item-input">
+            <input type="password"   ng-model="user.passWord" autocorrect="off"   placeholder="输入您的密码"  autocapitalize="off" required />
+        </label>
+
+        <label class="item item-input ">
+            <input type="date" ng-model="user.birthday"  autocorrect="off"   autocapitalize="off" required/>
+        </label>
+
+        <button type="submit" class="button button-assertive  button-full"  ng-disabled="registerForm.$invalid || auth.submitted" >
+            <i class="ion-loading-c buton-loading" ng-show="auth.submitted" ></i>
+            注册
+        </button>
+
+    </form>
+
+</div>

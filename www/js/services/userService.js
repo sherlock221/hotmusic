@@ -15,5 +15,19 @@ angular.module("hotmusic")
                 });
             return defer.promise;
         }
+
+
+        service.register = function(user){
+            var defer = $q.defer();
+
+            $http.post(SERVER.url + "/users/register",{user:user})
+                .success(function(data){
+                    defer.resolve(data);
+                })
+                .error(function(err,status){
+                    defer.reject(err,status);
+                });
+            return defer.promise;
+        }
         return service;
    });
