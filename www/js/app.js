@@ -49,6 +49,34 @@ angular.module('hotmusic', ['ionic'])
                 }
 
             })
+            .state('app',{
+                url : "/app",
+                abstract:true,
+                templateUrl:  "tpls/app/main.html",
+                controller:  "MainCtrl"
+            })
+
+            .state("app.discover",{
+                url : "/discover",
+                views : {
+                    "tab-discover" : {
+                        "templateUrl" :"tpls/app/discover/search.html",
+                        "controller"   : "SearchCtrl"
+                    }
+
+                }
+            })
+
+            .state("app.profile",{
+                url : "/profile:username",
+                views : {
+                    "tab-profile" :{
+                        "templateUrl" : "tpls/app/favorite.html",
+                        "controller" : "FavoriteCtrl"
+                    }
+                }
+
+            })
 
         //默认路径
         $urlRouterProvider.otherwise('/splash');

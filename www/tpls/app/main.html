@@ -1,24 +1,19 @@
-<ion-tabs class="tabs-icon-only app" delegate-handle="main-tabs">
+<ion-tabs class=" tabs-positive tabs-icon-only ">
 
-    <!-- Pets Tab -->
-    <ion-tab title="Discover" icon="icon ion-home" href="#/app/discover"
-             on-select="setCurrentTab(0)" on-deselect="broadcastTabChange(0)" ng-click="">
+    <ion-tab title="发现" icon="icon ion-home" href="#/app/discover">
 
+        <!-- 返回按钮 -->
         <ion-nav-bar class="bar-stable nav-title-slide-ios7">
             <ion-nav-back-button class="button-icon icon ion-chevron-left blue-white-btn no-hover">
             </ion-nav-back-button>
         </ion-nav-bar>
 
-        <ion-nav-view name="tab-discover"></ion-nav-view>
-
+            <ion-nav-view name="tab-discover"></ion-nav-view>
     </ion-tab>
 
+    <ion-tab title="个人" icon="icon ion-person" href="#app/profile">
 
-    <!-- About Tab -->
-    <ion-tab title="Profile" icon="icon ion-person" href="#/app/profile/{{me.username}}"
-             on-select="setCurrentTab(1)" on-deselect="broadcastTabChange(1)"
-             ng-click=""  badge-style="badge-assertive">
-
+        <!-- 返回按钮 -->
         <ion-nav-bar class="bar-stable nav-title-slide-ios7">
             <ion-nav-back-button class="button-icon icon ion-chevron-left blue-white-btn no-hover">
             </ion-nav-back-button>
