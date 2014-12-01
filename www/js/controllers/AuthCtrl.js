@@ -1,5 +1,5 @@
 angular.module("hotmusic")
- .controller("AuthCtrl",function($scope,$rootScope,$state,$log,$timeout,userService){
+ .controller("AuthCtrl",function($scope,$rootScope,$state,$log,$timeout,accountService){
         var _this  = this;
         this.state = $state;
         //表单值
@@ -16,7 +16,7 @@ angular.module("hotmusic")
                 login :$scope.user.userEmail,
                 password  :   $scope.user.passWord
             };
-            userService.login(user).then(function(data){
+            accountService.login(user).then(function(data){
                 _this.submitted = false;
                 $state.go("app.discover");
 
@@ -37,7 +37,7 @@ angular.module("hotmusic")
                 birthday  : $scope.user.birthday
             };
 
-            userService.register(user).then(function(data){
+            accountService.register(user).then(function(data){
                 console.log(data);
                 alert("注册成功！");
                 _this.submitted = false;

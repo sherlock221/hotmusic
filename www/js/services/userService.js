@@ -1,33 +1,42 @@
-//异步函数 都支持promise规范进行
+
+/** 用户状态操作 **/
 
 angular.module("hotmusic")
-       .factory("userService",function($q,$http,SERVER){
+       .factory("userService",function($q,$http,SERVER,Storage){
 
-        var service = {};
-        service.login = function(user){
-            var defer = $q.defer();
-            $http.post(SERVER.url+"/users/login",{user:user})
-                .success(function(data){
-                    defer.resolve(data);
-                })
-                .error(function(err,status){
-                    defer.reject(err, status);
-                });
-            return defer.promise;
-        }
+       var userService = {
+          //user对象
+          user :  {}
+       };
+
+      var userDefer = $q.defer();
+
+      //保存用户验证信息
+      userService.save = function(newUser){
+         userDefer = $q.defer();
+
+          Storage.saveCredentials(newUser).then(function(){
+             angular.extend(userService.user,newUser);
+             userDefer.resolve();
+          },function(){
+             userDefer.reject();
+          });
+
+          return  userDefer.promise;
+      }
+
+      //清除用户信息
+      userService.clear = function(){
+            userDefer = $q.defer();
+            Storage.deleteCredentials().finally(function(){
+                //清空用户对象
+                userService.user = {};
+                userDefer.reject();
+            });
+
+            return userDefer.promise;
+      }
 
 
-        service.register = function(user){
-            var defer = $q.defer();
-
-            $http.post(SERVER.url + "/users/register",{user:user})
-                .success(function(data){
-                    defer.resolve(data);
-                })
-                .error(function(err,status){
-                    defer.reject(err,status);
-                });
-            return defer.promise;
-        }
-        return service;
+      return userService;
    });
