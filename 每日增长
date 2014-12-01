@@ -1,3 +1,4 @@
+11 28
 1.今日知道了 angular ui 路由中的 controller 别名的用法
                         使用别名在 dom元素中 调用controller上的方法或对象。
                         动态改变bar中的title标题 通过路由绑定的title值
@@ -5,3 +6,57 @@
                         在constant中定义常量
 
 问题 发下 ng-model 绑定的对象 需要外层包裹对象？？？
+
+
+
+12 02
+
+cordova 添加内置插件
+
+cordova plugin  add xxx
+
+添加内置插件到项目中。以下几处会自动帮你发生变化
+1. res/xml/config.xml
+2. AndroidManifest.xml
+3  assets 	plugins
+4  assets  	cordova_plugins.js
+
+
+
+添加 file管理系统
+
+参考文档
+http://plugins.cordova.io/#/package/org.apache.cordova.file
+
+关键的一句话
+cordova.file.dataDirectory - Persistent and private data storage within the application's sandbox using internal memory (on Android, if you need to use external memory, use .externalDataDirectory). On iOS, this directory is not synced with iCloud (use .syncedDataDirectory). (iOS, Android, BlackBerry 10)
+
+dataDirectory 私有数据存储 持久化的 存储在手机存储中
+在android 上如果你想使用sd卡存储  使用.externalDataDirectory
+在ios上 这个文件夹不同步icloud1的  要同步使用.syncedDataDirectory).
+
+位置是在 /data/data/<app-id>/files   参考文档 Android File System Layout
+
+
+
+名称 ： org.poetic.mixpanel: "0.1.0",
+github 地址 : https://github.com/poetic/cordova-mixpanel
+Mixpanel SDK  这是一个运营分析工具
+
+
+
+名称 ：org.apache.cordova.core.parseplugin": "0.1.0",
+
+github地址 https://github.com/thelonecabbage/red-alert-israel/tree/master/plugins/org.apache.cordova.core.parseplugin
+
+parse是个  移动后端服务平台
+http://www.cnblogs.com/over140/archive/2013/05/09/3068968.html
+
+
+angular.extend(a,b); 聚合函数
+
+名称 ： com.ionic.keyboard.keyboard
+控制键盘显示隐藏 或别的功能
+github 地址 https://github.com/driftyco/ionic-plugins-keyboard
+
+
