@@ -2,22 +2,14 @@
 
 angular.module("hotmusic")
     .factory("songListService",function($q,$http,SERVER){
-        var service = {
-            favorites : [],
-            newFavorites :[],
-            total : 0
+        var o = {
+            favorites: [],
+            total: 0,
+            newFavorites: []
         };
 
 
-       service.get = function(){
-          var  defer = $q.defer();
 
 
-
-
-           return defer.promise;
-       }
-
-
-        return service;
+        return o;
     });

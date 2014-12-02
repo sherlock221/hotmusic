@@ -4,5 +4,8 @@ angular.module("hotmusic")
 
                     _this.songList =  songListService;
 
+                    //测试
+
+
 
         });
