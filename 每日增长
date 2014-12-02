@@ -60,3 +60,18 @@ angular.extend(a,b); 聚合函数
 github 地址 https://github.com/driftyco/ionic-plugins-keyboard
 
 
+
+
+多屏互动的案例：
+chrome 超级跑跑
+http://www.digitaling.com/articles/10877.html
+
+
+
+12.3:
+
+
+slide-box:
+does-continue  boolean  box是否可以循环
+auto-play boolean  是否自动播放  true的话 desc-continue也为true
+slide-interval : 设置auto时间间隔
