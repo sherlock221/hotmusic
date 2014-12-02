@@ -72,3 +72,35 @@
 .splash .start .bottom .action-btn.signin.active {
     background-color: #2e93c8;
 }
+
+/** splash图片 **/
+.splash .start .slide-tut {
+    height: 430px;
+    position: fixed;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    bottom: 70px;
+    color: rgba(255, 255, 255, 0.8); }
+
+.splash .start .slide-tut .tut-box {
+    height: 430px;
+}
+
+.splash .start .slide-tut .description {
+    height: 60px;
+    padding: 0 15px; }
+
+.splash .start .slide-tut .snapshot img {
+    width: 150px; }
+
+.splash .start .slide-tut h3 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: white; }
+
+.splash .start .slide-tut p {
+    margin-top: 20px;
+}
+/** splash图片 **/

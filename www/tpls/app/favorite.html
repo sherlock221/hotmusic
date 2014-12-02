@@ -1,3 +1,35 @@
-<ion-view>
-        fav
+<ion-view  class="favorites-page" title="{{userName}}">
+
+    <ion-content class="has-header"
+                 delegate-handle="favoritesContent"
+                 scroll="true" >
+
+        <!-- 下拉刷新 -->
+        <ion-refresher
+                pulling-icon="ion-arrow-down-a"
+                refreshing-icon="ion-loading-c"
+                on-refresh="">
+        </ion-refresher>
+
+        <div class="profile-container" ng-show="profileInfo">
+
+            <div class="prof-header">
+
+                <div class="row top-row">
+                    <div class="col">
+                        <img ng-src="{{profileInfo.avatar.md}}"
+                             class="pic" ng-click="changeProfilePicture()" />
+                    </div>
+
+                    <div class="col col-50">222</div>
+                    <div class="col">333</div>
+
+            </div>
+
+        </div>
+
+
+
+        </ion-content>
+
 </ion-view>

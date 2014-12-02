@@ -7,36 +7,38 @@
                    <!--这是最棒的应用thanks-->
                 <!--</div>-->
 
+                <div class="slide-tut">
+                    <!-- 轮播展示 -->
+                    <ion-slide-box class="tut-box" on-slide-changed="slidesChanged($index);" >
+                        <ion-slide>
+                            <div class="description">
+                                <h3>告诉我们你想要的音乐!</h3>
+                            </div>
+                            <div class="snapshot">
+                                <img src="img/splash/1a.png" />
+                            </div>
+                        </ion-slide>
+                        <ion-slide>
+                            <div class="description">
+                                <h3>听你最喜欢的歌曲</h3>
+                            </div>
+                            <div class="snapshot">
+                                <img src="img/splash/1.png" />
+                            </div>
+                        </ion-slide>
+                        <ion-slide>
+                            <div class="description">
+                                <h3>分享你最喜欢的音乐给朋友</h3>
+                            </div>
 
-                <!-- 轮播展示 -->
-                <ion-slide-box class="tut-box" on-slide-changed="slidesChanged($index);" does-continue="true" >
-                    <ion-slide>
-                        <div class="description">
-                            <h3>告诉我们你想要的音乐!</h3>
-                        </div>
-                        <div class="snapshot">
-                            <img src="img/splash/1a.png" />
-                        </div>
-                    </ion-slide>
-                    <ion-slide>
-                        <div class="description">
-                            <h3>听你最喜欢的歌曲</h3>
-                        </div>
-                        <div class="snapshot">
-                            <img src="img/splash/1.png" />
-                        </div>
-                    </ion-slide>
-                    <ion-slide>
-                        <div class="description">
-                            <h3>分享你最喜欢的音乐给朋友</h3>
-                        </div>
+                            <div class="snapshot">
+                                <img src="img/splash/2.png" />
+                            </div>
+                        </ion-slide>
 
-                        <div class="snapshot">
-                            <img src="img/splash/2.png" />
-                        </div>
-                    </ion-slide>
+                    </ion-slide-box>
 
-                </ion-slide-box>
+                </div>
 
                 <div class="bottom">
                     <a class="button button-positive button-full button-no" ng-click="goRegister();">注册</a>

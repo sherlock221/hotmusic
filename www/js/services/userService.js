@@ -3,13 +3,15 @@
 
 angular.module("hotmusic")
        .factory("userService",function($q,$http,SERVER,Storage){
+       var userDefer = $q.defer();
 
        var userService = {
           //user对象
-          user :  {}
+          user :  {},
+         //user promise
+         loadingPromise : userDefer.promise
        };
 
-      var userDefer = $q.defer();
 
       //保存用户验证信息
       userService.save = function(newUser){
@@ -36,6 +38,14 @@ angular.module("hotmusic")
 
             return userDefer.promise;
       }
+
+      //自动验证
+     Storage.authPromise.then(function(loadUser){
+         angular.copy(loadUser,userService.user);
+         userDefer.resolve();
+     },function(){
+        userDefer.reject();
+     });
 
 
       return userService;

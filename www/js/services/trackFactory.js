@@ -1,6 +1,6 @@
 
 angular.module('hotmusic')
-.factory('Track', function($q, $log, $http, $ionicModal, $rootScope, SERVER, Spotify) {
+.factory('Track', function($q, $log, $http, $ionicModal, $rootScope, SERVER) {
 
   var _successCallback = function(cb){
     // console.log(this.title, " ready to play");

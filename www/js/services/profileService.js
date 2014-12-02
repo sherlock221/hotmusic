@@ -1,7 +1,7 @@
 //异步函数 都支持promise规范进行
 
 angular.module("hotmusic")
-    .factory("accountService",function($q,$http,SERVER,Track,userService){
+    .factory("Profile",function($q,$http,SERVER,Track){
 
         var profile = {
                 profileCache : {}

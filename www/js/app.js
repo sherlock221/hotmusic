@@ -2,8 +2,6 @@ angular.module('hotmusic', ['ionic'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
-        
-        	console.log("dddd");
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -20,7 +18,23 @@ angular.module('hotmusic', ['ionic'])
             .state("splash",{
                 url : "/splash",
                 templateUrl : "tpls/splash.html",
-                controller : "SplashCtrl as splash"
+                controller : "SplashCtrl as splash",
+                resolve : {
+                    "isAuthed" : function($q,$state,userService){
+                        var defer  = $q.defer();
+                        userService.loadingPromise.then(function(){
+                            console.log("自动验证!..."+userService.user);
+                            if (!userService.user.username || !userService.user.name) {
+                                $state.go('profile');
+                            } else {
+                                $state.go('app.discover');
+                            }
+                            defer.resolve(true);
+                        },function(){
+                            defer.resolve(true);
+                        });
+                    }
+                }
             })
 
             .state('auth', {
